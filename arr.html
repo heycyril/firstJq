@@ -7,28 +7,46 @@
     <script>
         var arr = [1,3,5,7];
         var object = {1:'a',2:'b',3:'c','obj':'d'};
-       //这是原生js each写法
+
+<!-- 11111111111111111111111111111111111111111111111111111111111111111111111111 -->
+
+        //这是原生js each写法
         arr.forEach(function (value,index) {
-            console.log("JS",value,index);
+          //  console.log("JS",value,index);
         });
         //这是引用jq写法
         $.each(arr,function (index,value) {
-            console.log("jquery",index,value);
+          //  console.log("jquery",index,value);
         });
         $.each(object,function (index,value) {
-            console.log("jquery",index,value);
+           // console.log("jquery",index,value);
         });
 
-
+<!-- 11111111111111111111111111111111111111111111111111111111111111111111111111 -->
 
         //原生js map
         arr.map(function (value, index, array) {
-            console.log("js&map",value,index,array);
+           // console.log("js&map",value,index,array);
         });
         //引用jq
         $.map(arr,function (value,index) {
-            console.log("JQ&map",value,index);
+           // console.log("JQ&map",value,index);
         });
+
+<!-- 11111111111111111111111111111111111111111111111111111111111111111111111111 -->
+
+
+        //比较each 和  map
+        var each1 = $.each(arr,function (value,index) {
+           // console.log("JQ&map",value,index);
+            return index +" , "+ value;  //each不能处理返回值
+        });
+        console.log(each1);//each可以输出
+        var map1 = $.map(arr,function (value,index) {
+            // console.log("JQ&map",value,index);
+            return index +" , "+ value;  //map可以处理返回值
+        });
+        console.log(map1);//map输出空
     </script>
 </head>
 <body>
