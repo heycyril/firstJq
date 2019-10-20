@@ -1,23 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-<script src="jq/jquery-3.4.1.js"></script>
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-</head>
-<body>
+    <script src="jq/jquery-3.4.1.js"></script>
+
     <script>
+       // jQuery.noConflict();
+         jQuery(function(){
+             console.log("jQuery测试");
+         });
+
         $(document).ready(function(){
             $("#p1").click(function(){
-                    $("p").hide();
-
-
-
+                    $(this).hide();
                 }
             );
+            $(".p2").click(function(){
+                $(this).show();
+            });
         });
+        //第二种写法
+        //jQuery(document).ready(function(){});
+        //第三种
+        //$(function(){});
+        //四 jQuery(function(){});
 
     </script>
+</head>
+<body>
+
     <p id="p1">你好</p>
+    <p class="p2" property="hide">你好 again</p>
+  <!--<img src="https://img.alicdn.com/imgextra/i2/3208450429/TB2Gpy2weuSBuNjSsziXXbq8pXa_!!3208450429-0-beehive-scenes.jpg_180x180xzq90.jpg_.webp" alt=""/>
+    -->
 </body>
 </html>
