@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="JQ/jquery-3.4.1.js"></script>
+    <title>Title</title>
+    <script>
+        var str = "  str  ";
+        var tet = $.trim(str); //这是有返回值的
+        //console.log(tet);
+
+        var ts = window;
+        var isW= $.isWindow(ts);//返回值ture or false
+        var isArr = $.isArray(ts);//判断数组
+        var isFunc = $.isFunction(ts);//判断方法
+        //注意点, jQuery本身是一个函数
+        var isFuncJQ = $.isFunction(jQuery);
+        //jquery 本质 --> (function(){})(window);
+        console.log(isW,isArr,isFunc,isFuncJQ);//判断传入值
+
+        //holdReadyl来暂停ready方法
+        $.holdReady(true);
+        $(document).ready(function () {
+            alert("ok");
+        });
+
+
+
+    </script>
+</head>
+<body>
+    <div>
+        <button class="but">点击</button>
+    </div>
+    <!-- 想要触发按钮,下面这个script 位置要注意 -->
+    <script>
+        var tt = document.getElementsByClassName("but")[0];
+        tt.onclick = function() {
+            $(".but").html("ok");
+            $.holdReady(false);
+        }
+    </script>
+</body>
+</html>
