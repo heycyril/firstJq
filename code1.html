@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="JQ/jquery-3.4.1.js"></script>
+    <!--<style type="css1"></style>-->
+    <title>Title</title>
+    <script>
+        $(function(){
+            var span1 = document.getElementsByTagName("span")[0];
+            //span.getAttribute("name");
+            span1.setAttribute("name","tag");
+            console.log(span1.getAttribute("name"))
+
+            $("span").attr("class","class1");//注意会找到全部的,改也是改全部的
+            $("span").attr("abc","123");
+            $("span").removeAttr("abc");
+
+            //
+            $("span").eq(0).prop("dome","123"); //添加span第一个属性
+            console.log($("span").prop("dome"));//获取123   和get一样,只获取第一个
+            $("span").removeProp("dome");
+
+
+            //重要区别.取决于选择
+            console.log($("input").prop("checked"));//true
+            console.log($("input").attr("checked"));//checked
+
+            //切换
+            var bo = document.getElementsByTagName("button")[0];
+            bo.onclick = function(){
+                var inp = document.getElementsByTagName("input")[1];
+                var tset = inp.value;
+                //测试
+                //$("img").attr("src",tset);//可行
+                $("img").prop("src",tset);//也行, 应为返回值不是boolean, 所以推荐用attr
+            }
+        });
+    </script>
+</head>
+<body>
+ <span name = "span">span测试 </span>
+ <input type="checkbox" checked>
+
+ <input type="text"/>
+ <button>点击</button>
+ <img src="https://www.baidu.com/img/superlogo_c4d7df0a003d3db9b65e9ef0fe6da1ec.png?where=super">
+</body>
+</html>
