@@ -4,6 +4,18 @@
     <meta charset="UTF-8">
     <script src="JQ/jquery-3.4.1.js"></script>
     <!--<style type="css1"></style>-->
+    <style>
+        .class2{
+            height: 20px;
+            width: 20px;
+            background: blue;
+        }
+
+        .class3{
+            height: 30px;
+            width: 30px;
+        }
+    </style>
     <title>Title</title>
     <script>
         $(function(){
@@ -35,6 +47,41 @@
                 //$("img").attr("src",tset);//可行
                 $("img").prop("src",tset);//也行, 应为返回值不是boolean, 所以推荐用attr
             }
+
+            //css添加
+            var bot2 = document.getElementsByTagName("button");
+            bot2[1].onclick = function(){
+               // $("div").addClass("class2");
+                //$("div").removeClass("class2");
+                $("div").eq(0).toggleClass("class2 class3");//多个类名之间用空格就行
+
+                $(".class4").html("<p>你好</p>");
+                $(".bot2").text("<span>你好2</span>");
+                $("input").eq(1).val("请输入值");
+                console.log($(".class4").html());//innerHtml
+                console.log($(".bot2").text());//innerText
+                console.log($("input").eq(1).val());//value
+            }
+
+            //css
+           // $(".class5").css("height","20px");  //单个
+           // $(".class5").css("width","20px").css("background","red");//链式
+            //直接加对象
+            $(".class5").css({
+                width: "20px",
+                height: "30px",
+                background : "red"
+            });
+
+            console.log("csswidth"+$(".class5").css("height"));
+
+         var tet1 = document.getElementsByTagName("button")[2];
+    //////////////页面偏移
+         tet1.onclick = function () {
+             $("html,body").scrollTop(300);  //滚动整个页面   (考虑ie兼容性问题们可以这么写)
+             console.log($("html").scrollTop()+$("body").scrollTop());//获取页面偏移量 (考虑ie兼容性问题们可以这么写)
+         }
+
         });
     </script>
 </head>
@@ -45,5 +92,52 @@
  <input type="text"/>
  <button>点击</button>
  <img src="https://www.baidu.com/img/superlogo_c4d7df0a003d3db9b65e9ef0fe6da1ec.png?where=super">
+
+ <button class="bot2">店家二号</button>
+
+ <div></div>
+ <div class="class4"></div>
+ <div class="class5"></div>
+
+ <button >test</button>
+<br>
+ <br><br><br>
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+
+ <br>
+ <br>
+
+
+
+
+
+
+
+
+
+
+
+
+
 </body>
 </html>
