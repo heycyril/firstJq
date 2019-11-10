@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .father
+        {
+            height: 200px;
+            width: 200px;
+            background: blue;
+        }
+        .son
+        {
+            height: 100px;
+            width: 100px;
+            background: brown;
+        }
+    </style>
+    <script src="JQ/jquery-3.4.1.js"></script>
+
+    <script>
+        $(function () {
+            $(".father").click(function () {
+                alert("father");
+            });
+        });
+    </script>
+</head>
+<body>
+
+    <div class="father">
+        <div class="son">
+
+        </div>
+    </div>
+</body>
+</html>

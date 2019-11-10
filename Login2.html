@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="CSS\style2.css">
+</head>
+<body>
+    <!--.container>.panel>.content>.switch+form 再按tab-->
+    <div class="container">
+        <div class="panel">
+            <div class="content login">
+                <div class="switch">
+                   <span id="login" class="active">Login</span>
+                   <span>/</span>
+                   <span id="signup">SignUp</span>
+                </div>
+                <form action="">
+                    <div id="email" class="input"><input type="text" placeholder="email"></div>
+                    <div class="input"><input type="text" placeholder="username"></div>
+                    <div class="input"><input type="text" placeholder="password"></div>
+                    <div id='repeat' class="input"><input type="text" placeholder="repeat"></div>
+                    <span>Forget?</span>
+                    <botton>LOGIN</botton>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+<script>
+    $('#login').click(function () {
+        $('.switch span').removeClass('active');
+        $(this).addClass('active');
+
+        $(this).parents('.content').removeClass('signup');
+        $(this).parents('.content').addClass('login');
+    })
+    $('#signup').click(function () {
+        $('.switch span').removeClass('active');
+        $(this).addClass('active');
+
+        $(this).parents('.content').removeClass('login');
+        $(this).parents('.content').addClass('signup');
+    })
+
+    $('.input input').on('focus',function () {
+        $(this).parent().addClass('focus');
+    })
+
+    $('.input input').on('blur',function () {
+        if($(this).val() === '')
+            $(this).parent().removeClass('focus');
+    })
+
+</script>
+</html>

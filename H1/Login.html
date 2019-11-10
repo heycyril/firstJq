@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="../JQ/jquery-3.4.1.js"></script>
+    <link rel="stylesheet" href="../CSS/style3.css">
+</head>
+<body>
+        <form action="Login.html" class="login-form">
+            <h1>Login</h1>
+            <div class="txtb">
+                <input type="text">
+                <span data-placeholder="UserName"></span>
+            </div>
+            <div class="txtb">
+                <input type="text">
+                <span data-placeholder="PassWord"></span>
+            </div>
+
+            <input type="submit" class="logbth" value="Login">
+            <div class="botom-text">
+                Don't have account ? <a href="#">Sign Up</a>
+            </div>
+        </form>
+
+        <script type="text/javascript">
+            $(".txtb input").on("focus",function () {
+                $(this).addClass("focus");
+            })
+            $(".txtb input").on("blur",function () {
+                if($(this).val() == "")
+                    $(this).removeClass("focus");
+            })
+        </script>
+</body>
+</html>
